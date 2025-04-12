@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+ {% block content %}
+<ul >
+ <li >{{ cat.name}}</li>   <a href="{% url 'category-delete' cat.pk %} "> <li>delete</li></a>
+</ul>
+<a href="{% url 'category-list' %}">back </a>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+ {% block content %}
+<a href="{% url 'category-create' %}">create cat </a>
+<a href="{% url 'product-create' %}">create product </a>
+{% for c in cats %}
+<ul >
+ <a href="{% url 'category-detail' c.pk %}"><li >{{c.name}}</li></a>
+</ul>
+{% endfor %}
+{% endblock %}

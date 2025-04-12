@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<form method="get" action="">
+    <input type="text" name="q" placeholder="Qidiruv..." value="{{ query }}">
+    <button type="submit">Qidirish</button>
+</form>
+
+{% if query %}
+    {% for p in filtered_products %}
+        <p>{{ p.name }}</p>
+        <p>{{ p.description }}</p>
+        <p>{{ p.price }}</p>
+        <img src="{{ p.image.url }}" alt="bu rasm" width="200px">
+    {% empty %}
+        <p>No products found for your search.</p>
+    {% endfor %}
+{% endif %}
+
+{% for p in products %}
+    <p>{{ p.name }}</p>
+    <p>{{ p.description }}</p>
+    <p>{{ p.price }}</p>
+    <img src="{{ p.image.url }}" alt="bu rasm" width="200px">
+{% endfor %}
+
+{% endblock %}

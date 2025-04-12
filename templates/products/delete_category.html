@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+ {% block content %}
+<p>Siz rostdan ham o'chirmoqchimisiz {{category.name}}</p>
+<button type="submit">Ha</button>
+<a href="{% url 'category-list' %}">yo'q </a>
+
+{% endblock %}

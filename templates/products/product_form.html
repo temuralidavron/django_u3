@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+ {% block content %}
+<h3>Product yaratish </h3>
+
+  <form method="POST" enctype="multipart/form-data">
+
+    {% csrf_token %}
+    <p>{{ form.as_p }}</p>
+
+    <button type="submit">save</button>
+</form>
+{% endblock %}
